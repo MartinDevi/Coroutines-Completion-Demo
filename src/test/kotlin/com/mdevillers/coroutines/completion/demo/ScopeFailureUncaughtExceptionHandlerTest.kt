@@ -1,6 +1,7 @@
 package com.mdevillers.coroutines.completion.demo
 
 import kotlinx.coroutines.*
+import org.junit.Before
 import org.junit.Test
 
 /**
@@ -9,6 +10,11 @@ import org.junit.Test
  * Tests will throw an [AssertionError] if the uncaught exception handler was invoked.
  */
 class ScopeFailureUncaughtExceptionHandlerTest {
+
+    @Before
+    fun setUp() {
+        clearCoroutineExceptions()
+    }
 
     @Test
     fun `coroutineScope { throw }`() = runTest {

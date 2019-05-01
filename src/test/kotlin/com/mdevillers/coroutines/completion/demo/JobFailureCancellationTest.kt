@@ -1,6 +1,7 @@
 package com.mdevillers.coroutines.completion.demo
 
 import kotlinx.coroutines.*
+import org.junit.Before
 import org.junit.Test
 import kotlin.coroutines.CoroutineContext
 import kotlin.coroutines.EmptyCoroutineContext
@@ -14,6 +15,11 @@ class JobFailureCancellationTest {
 
     private val coroutineExceptionHandler
         get() = CoroutineExceptionHandler { _, _ -> }
+
+    @Before
+    fun setUp() {
+        clearCoroutineExceptions()
+    }
 
     @Test
     fun `launch + Job { throw }`() = runTest(parent = Job()) {

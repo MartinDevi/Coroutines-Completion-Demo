@@ -6,6 +6,10 @@ import kotlin.coroutines.CoroutineContext
 
 private val coroutineExceptions = mutableListOf<Throwable>()
 
+fun clearCoroutineExceptions() {
+    coroutineExceptions.clear()
+}
+
 fun throwCoroutineExceptions() {
     val exceptions = consumeExceptions()
     if (exceptions.isNotEmpty()) {

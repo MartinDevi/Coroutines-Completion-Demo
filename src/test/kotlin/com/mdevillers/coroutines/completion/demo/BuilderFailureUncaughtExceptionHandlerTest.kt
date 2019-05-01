@@ -1,6 +1,7 @@
 package com.mdevillers.coroutines.completion.demo
 
 import kotlinx.coroutines.*
+import org.junit.Before
 import org.junit.Test
 
 /**
@@ -12,6 +13,11 @@ class BuilderFailureUncaughtExceptionHandlerTest {
 
     private val coroutineExceptionHandler
         get() = CoroutineExceptionHandler { _, _ -> }
+
+    @Before
+    fun setUp() {
+        clearCoroutineExceptions()
+    }
 
     @Test
     fun `launch { throw }`() = runTest {
