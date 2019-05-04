@@ -11,7 +11,7 @@ invoked.
 
 [BuilderFailureUncaughtExceptionHandlerTest.kt](src/test/kotlin/com/mdevillers/coroutines/completion/demo/BuilderFailureUncaughtExceptionHandlerTest.kt)
 
-## Factory Job Failure
+## Factory Job Child Failure
 
 1. Failure indicates that the default uncaught exception handler was
    invoked.
